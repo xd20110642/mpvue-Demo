@@ -1,0 +1,43 @@
+//转换rpx
+@function rpx($value){
+  @return $value * 1rpx;
+}
+
+@mixin border-1px-bottom($color){
+  position: relative;
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid $color;
+  }
+}
+@mixin border-1px-right($color){
+  position: relative;
+  &::after{//在之后
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+    border-right: 1px solid $color;
+  }
+}
+
+//小箭头
+@mixin jiantou($color){
+  position: relative;
+  &::after{
+    center:'';
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid $color;
+    border-right: 3px solid $color;
+    transform:rotate(445deg) ;
+    display: block;
+  }
+}
